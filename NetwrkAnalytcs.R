@@ -1,4 +1,4 @@
-##Question -1
+#Creating network analytics models on two datasets separately and measuring degree centrality, degree of closeness centrality, and degree of in-between centrality.
 library(igraph)#it is a library used for network analysis
 flight <- read.csv("/Users/jobinsamuel/Desktop/Assignments/Network Analytics/Datasets_Network Analytics/flight_hault.csv") #Read data
 colnames(flight) <- c("ID","Name","City","Country","IATA_FAA","ICAO","Latitude","Longitude","Altitude","Time","DST","Tz database time")#Assigning column names
@@ -60,9 +60,8 @@ plot(centralts[, "cls"], centralts[, "btwn"])
 subset(centralts, (centralts[, "cls"] < 0.005) & (centralts[, "btwn"] < 0.02))
 flight[which(flight$IATA_FAA == "PMI"), ]
 
-###Question- 2
+####Constructing Circular Network using Adjacency Matrix
 
-###Circular Network using Adjacency Matrix
 FB <- read.csv("/Users/jobinsamuel/Desktop/Assignments/Network Analytics/Datasets_Network Analytics/facebook.csv", header=TRUE)
 head(FB) # shows initial few rows of the loaded file
 
@@ -70,7 +69,7 @@ head(FB) # shows initial few rows of the loaded file
 fb <- graph.adjacency(as.matrix(FB), mode="undirected", weighted=TRUE)
 plot(fb)
 
-####Star network  using Adjacency Matrix #########
+####Constructing star network  using Adjacency Matrix #########
 Insta <- read.csv("/Users/jobinsamuel/Desktop/Assignments/Network Analytics/Datasets_Network Analytics/instagram.csv", header = TRUE)
 head(Insta) # shows initial few rows of the loaded file
 
