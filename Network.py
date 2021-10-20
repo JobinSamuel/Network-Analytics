@@ -2,8 +2,7 @@ import pandas as pd
 import networkx as nx #NetworkX is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
 import matplotlib.pyplot as plt #Used for plots
 
-###Question- 1
-
+##Creating network analytics models on two datasets separately and measuring degree centrality, degree of closeness centrality, and degree of in-between centrality.
 
 flg = pd.read_table("/Users/jobinsamuel/Desktop/Assignments/Network Analytics/Datasets_Network Analytics/connecting_routes.csv",sep=",") # Read data
 flg.columns=["flights", " ID", "main Airportmain Airport ID", "Destination ","Destination  ID","haults","machinary","O","CR"] #Assigning Column names
@@ -52,8 +51,7 @@ print(closeness)
 Ac = nx.average_clustering(g) 
 print(Ac)
 
-#Question -2 
-
+#Creating Star networks
 Insta = pd.read_csv("/Users/jobinsamuel/Desktop/Assignments/Network Analytics/Datasets_Network Analytics/instagram.csv") #Raed data
 
 #Plotting a star graph
